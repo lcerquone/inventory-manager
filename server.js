@@ -1,8 +1,9 @@
-require("dotenv").config();
-const express = require("express");
-const { Pool } = require("pg");
-const cors = require("cors");
+import 'dotenv/config';
+import express from 'express';
+import pg from 'pg';
+import cors from 'cors';
 
+const { Pool } = pg;
 const app = express();
 const PORT = process.env.PORT || 80;
 
