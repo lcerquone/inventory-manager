@@ -22,6 +22,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
+pool.on('error', (err, client) => {
+  console.error('Error inesperado en el cliente inactivo de la base de datos', err);
+  process.exit(-1);
+});
+
 const initializeDatabase = async () => {
   const client = await pool.connect();
   try {
