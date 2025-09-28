@@ -5,7 +5,7 @@ import cors from 'cors';
 
 const { Pool } = pg;
 const app = express();
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3001;
 
 const pool = new Pool({
   host: process.env.DB_HOST,
